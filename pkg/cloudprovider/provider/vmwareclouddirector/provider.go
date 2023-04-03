@@ -330,32 +330,32 @@ func (p *provider) getConfig(provSpec clusterv1alpha1.ProviderSpec) (*Config, *p
 	c := Config{}
 	c.Username, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.Username, "VCD_USER")
 	if err != nil {
-		return nil, nil, nil, fmt.Errorf("failed to get the value of \"username\" field, error = %w", err)
+		return nil, nil, nil, fmt.Errorf(`failed to get the value of \"username\" field, error = %w`, err)
 	}
 
 	c.Password, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.Password, "VCD_PASSWORD")
 	if err != nil {
-		return nil, nil, nil, fmt.Errorf("failed to get the value of \"password\" field, error = %w", err)
+		return nil, nil, nil, fmt.Errorf(`failed to get the value of \"password\" field, error = %w`, err)
 	}
 
 	c.Organization, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.Organization, "VCD_ORG")
 	if err != nil {
-		return nil, nil, nil, fmt.Errorf("failed to get the value of \"organization\" field, error = %w", err)
+		return nil, nil, nil, fmt.Errorf(`failed to get the value of \"organization\" field, error = %w`, err)
 	}
 
 	c.URL, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.URL, "VCD_URL")
 	if err != nil {
-		return nil, nil, nil, fmt.Errorf("failed to get the value of \"url\" field, error = %w", err)
+		return nil, nil, nil, fmt.Errorf(`failed to get the value of \"url\" field, error = %w`, err)
 	}
 
 	c.VDC, err = p.configVarResolver.GetConfigVarStringValueOrEnv(rawConfig.VDC, "VCD_VDC")
 	if err != nil {
-		return nil, nil, nil, fmt.Errorf("failed to get the value of \"vdc\" field, error = %w", err)
+		return nil, nil, nil, fmt.Errorf(`failed to get the value of \"vdc\" field, error = %w`, err)
 	}
 
 	c.AllowInsecure, err = p.configVarResolver.GetConfigVarBoolValueOrEnv(rawConfig.AllowInsecure, "VCD_ALLOW_UNVERIFIED_SSL")
 	if err != nil {
-		return nil, nil, nil, fmt.Errorf("failed to get the value of \"allowInsecure\" field, error = %w", err)
+		return nil, nil, nil, fmt.Errorf(`failed to get the value of \"allowInsecure\" field, error = %w`, err)
 	}
 
 	c.VApp, err = p.configVarResolver.GetConfigVarStringValue(rawConfig.VApp)
